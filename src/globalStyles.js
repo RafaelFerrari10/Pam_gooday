@@ -7,6 +7,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.white,
   },
+  splashSafeArea: {
+    flex: 1,
+    backgroundColor: COLORS.green,
+  },
   pressed: {
     opacity: 0.68,
   },

@@ -1,5 +1,6 @@
-import { Image, ScrollView, Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { ASSETS } from './assets';
 import { OutlineButton, PrimaryButton } from './components';
@@ -8,13 +9,9 @@ import { COLORS } from './theme';
 
 export default function WelcomeScreen({ onContinue }) {
   return (
-    <View style={styles.appBackground}>
+    <SafeAreaView edges={['top', 'bottom']} style={styles.appBackground}>
       <StatusBar style="dark" backgroundColor={COLORS.white} />
-      <ScrollView
-        bounces={false}
-        contentContainerStyle={styles.welcomeContent}
-        showsVerticalScrollIndicator={false}
-      >
+      <View style={styles.welcomeContent}>
         <View style={styles.welcomeHero}>
           <Image source={ASSETS.hero} style={styles.heroImage} resizeMode="contain" />
         </View>
@@ -28,7 +25,7 @@ export default function WelcomeScreen({ onContinue }) {
           </PrimaryButton>
           <OutlineButton onPress={onContinue}>Outras opções</OutlineButton>
         </View>
-      </ScrollView>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 }

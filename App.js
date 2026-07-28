@@ -1,5 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Platform } from 'react-native';
+import {
+  initialWindowMetrics,
+  SafeAreaProvider,
+} from 'react-native-safe-area-context';
 
 import LoginScreen from './src/LoginScreen';
 import RegisterScreen from './src/RegisterScreen';
@@ -33,22 +37,26 @@ export default function App() {
     return () => clearTimeout(timer);
   }, [initialScreen.pinned, screen]);
 
-  if (screen === 'splash') {
-    return <SplashScreen onFinish={() => setScreen('welcome')} />;
-  }
+  let currentScreen;
 
-  if (screen === 'login') {
-    return (
+  if (screen === 'splash') {
+    currentScreen = <SplashScreen onFinish={() => setScreen('welcome')} />;
+  } else if (screen === 'login') {
+    currentScreen = (
       <LoginScreen
         onBack={() => setScreen('welcome')}
         onRegister={() => setScreen('register')}
       />
     );
+  } else if (screen === 'register') {
+    currentScreen = <RegisterScreen onBack={() => setScreen('login')} />;
+  } else {
+    currentScreen = <WelcomeScreen onContinue={() => setScreen('login')} />;
   }
 
-  if (screen === 'register') {
-    return <RegisterScreen onBack={() => setScreen('login')} />;
-  }
-
-  return <WelcomeScreen onContinue={() => setScreen('login')} />;
+  return (
+    <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+      {currentScreen}
+    </SafeAreaProvider>
+  );
 }
