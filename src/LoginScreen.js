@@ -20,7 +20,7 @@ import {
 import styles from './globalStyles';
 import { COLORS } from './theme';
 
-export default function LoginScreen({ onBack, onRegister }) {
+export default function LoginScreen({ onBack, onAccess, onRegister }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -79,7 +79,9 @@ export default function LoginScreen({ onBack, onRegister }) {
           </View>
 
           <View style={styles.loginActions}>
-            <PrimaryButton style={styles.halfButton}>Acessar</PrimaryButton>
+            <PrimaryButton onPress={onAccess} style={styles.halfButton}>
+              Acessar
+            </PrimaryButton>
             <OutlineButton onPress={onRegister} style={styles.halfButton}>
               Cadastrar
             </OutlineButton>

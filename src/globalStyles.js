@@ -170,6 +170,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  inputShellDisabled: {
+    opacity: 0.55,
+  },
   input: {
     flex: 1,
     height: '100%',
@@ -178,6 +181,48 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
     outlineStyle: 'none',
+  },
+  inputPlaceholder: {
+    color: COLORS.placeholder,
+  },
+  fieldIcon: {
+    fontSize: 20,
+    marginRight: 14,
+  },
+  fieldIconDisabled: {
+    opacity: 0.4,
+  },
+  datePickerWrap: {
+    marginTop: 12,
+    alignItems: 'center',
+  },
+  datePickerConfirm: {
+    marginTop: 12,
+    alignSelf: 'stretch',
+  },
+  dropdownOption: {
+    paddingVertical: 14,
+    paddingHorizontal: 8,
+    borderRadius: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  dropdownOptionSelected: {
+    backgroundColor: '#E7FBF1',
+  },
+  dropdownOptionText: {
+    color: COLORS.ink,
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  dropdownOptionTextSelected: {
+    color: COLORS.green,
+  },
+  dropdownOptionCheck: {
+    color: COLORS.green,
+    fontSize: 18,
+    fontWeight: '700',
   },
   passwordInput: {
     paddingRight: 54,
@@ -292,6 +337,376 @@ const styles = StyleSheet.create({
   },
   registerSocial: {
     marginTop: 49,
+  },
+  onboardingHero: {
+    height: 460,
+    marginHorizontal: -28,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  illustrationCircle: {
+    width: 300,
+    height: 300,
+    borderRadius: 150,
+    backgroundColor: '#E7FBF1',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  onboardingImage: {
+    width: '100%',
+    height: 420,
+  },
+  illustrationEmoji: {
+    fontSize: 130,
+  },
+  onboardingTitle: {
+    marginTop: 44,
+    color: COLORS.ink,
+    fontSize: 40,
+    lineHeight: 48,
+    fontWeight: '700',
+    textAlign: 'center',
+  },
+  onboardingMessage: {
+    marginTop: 12,
+    color: COLORS.ink,
+    fontSize: 15,
+    lineHeight: 22,
+    fontWeight: '500',
+    textAlign: 'center',
+  },
+  onboardingNext: {
+    marginTop: 44,
+    alignItems: 'flex-end',
+  },
+  nextArrowButton: {
+    width: 78,
+    height: 78,
+    borderRadius: 39,
+    backgroundColor: COLORS.green,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  nextArrowButtonPressed: {
+    backgroundColor: COLORS.greenPressed,
+  },
+  nextArrow: {
+    width: 20,
+    height: 20,
+    borderTopWidth: 2,
+    borderRightWidth: 2,
+    borderColor: COLORS.white,
+    transform: [{ rotate: '-45deg' }],
+  },
+  stepFields: {
+    marginTop: 28,
+    gap: 16,
+  },
+  stepButton: {
+    marginTop: 40,
+  },
+  photoPreview: {
+    width: 240,
+    height: 240,
+    borderRadius: 120,
+    backgroundColor: COLORS.input,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    marginTop: 40,
+    overflow: 'hidden',
+  },
+  photoPreviewEmoji: {
+    fontSize: 96,
+  },
+  photoOptions: {
+    marginTop: 44,
+    gap: 16,
+  },
+  photoOption: {
+    height: 118,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: COLORS.green,
+    backgroundColor: COLORS.white,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 14,
+  },
+  photoOptionPressed: {
+    backgroundColor: '#F0FFF8',
+  },
+  photoOptionEmoji: {
+    fontSize: 40,
+  },
+  photoOptionText: {
+    color: COLORS.ink,
+    fontSize: 17,
+    fontWeight: '600',
+  },
+  faceFrame: {
+    marginTop: 34,
+    alignSelf: 'center',
+    width: 320,
+    height: 320,
+    borderRadius: 8,
+    backgroundColor: COLORS.input,
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'hidden',
+  },
+  faceFrameEmoji: {
+    fontSize: 120,
+  },
+  faceTarget: {
+    position: 'absolute',
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    borderWidth: 3,
+    borderColor: COLORS.green,
+  },
+  faceInstruction: {
+    marginTop: 24,
+    color: COLORS.ink,
+    fontSize: 16,
+    lineHeight: 22,
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+  reviewActions: {
+    marginTop: 32,
+    flexDirection: 'row',
+    gap: 16,
+  },
+  interestsGrid: {
+    marginTop: 30,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 12,
+  },
+  interestChip: {
+    paddingHorizontal: 18,
+    paddingVertical: 13,
+    borderRadius: 22,
+    borderWidth: 1,
+    borderColor: COLORS.green,
+    backgroundColor: COLORS.white,
+  },
+  interestChipSelected: {
+    backgroundColor: COLORS.green,
+    borderColor: COLORS.green,
+  },
+  interestChipRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  interestChipEmoji: {
+    fontSize: 16,
+  },
+  interestChipText: {
+    color: COLORS.ink,
+    fontSize: 15,
+    fontWeight: '500',
+  },
+  interestChipTextSelected: {
+    color: COLORS.white,
+  },
+  loadingSafeArea: {
+    flex: 1,
+    backgroundColor: COLORS.white,
+  },
+  loadingScreen: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: COLORS.white,
+  },
+  loadingLogo: {
+    width: 265,
+    height: 113,
+  },
+  loadingSpinner: {
+    marginTop: 40,
+  },
+  homeHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 22,
+    paddingTop: 8,
+    paddingBottom: 14,
+  },
+  homeLogo: {
+    width: 140,
+    height: 60,
+  },
+  homeHeaderIcons: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+  },
+  homeHeaderButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: COLORS.input,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  homeHeaderEmoji: {
+    fontSize: 20,
+  },
+  feedContent: {
+    paddingHorizontal: 22,
+    paddingBottom: 120,
+  },
+  feedSection: {
+    marginBottom: 26,
+  },
+  feedSectionHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 12,
+  },
+  feedSectionTitle: {
+    color: COLORS.ink,
+    fontSize: 19,
+    fontWeight: '700',
+  },
+  feedSectionLink: {
+    color: COLORS.green,
+    fontSize: 13,
+    fontWeight: '600',
+  },
+  feedRow: {
+    gap: 14,
+    paddingRight: 6,
+  },
+  feedCard: {
+    width: 230,
+    borderRadius: 12,
+    backgroundColor: COLORS.white,
+    borderWidth: 1,
+    borderColor: '#E9ECF1',
+    overflow: 'hidden',
+  },
+  feedCardImage: {
+    height: 128,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#E7FBF1',
+  },
+  feedCardEmoji: {
+    fontSize: 52,
+  },
+  feedCardBody: {
+    padding: 12,
+  },
+  feedCardTitle: {
+    color: COLORS.ink,
+    fontSize: 16,
+    fontWeight: '700',
+  },
+  feedCardSubtitle: {
+    marginTop: 3,
+    color: COLORS.muted,
+    fontSize: 13,
+    lineHeight: 18,
+  },
+  bottomNav: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: 76,
+    borderTopWidth: 1,
+    borderTopColor: '#E9ECF1',
+    backgroundColor: COLORS.white,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  navItem: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 3,
+  },
+  navIcon: {
+    fontSize: 22,
+  },
+  navLabel: {
+    color: COLORS.muted,
+    fontSize: 11,
+    fontWeight: '500',
+  },
+  navLabelActive: {
+    color: COLORS.green,
+  },
+  modalBackdrop: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.45)',
+    justifyContent: 'flex-end',
+  },
+  modalPanel: {
+    backgroundColor: COLORS.white,
+    borderTopLeftRadius: 18,
+    borderTopRightRadius: 18,
+    paddingTop: 14,
+    paddingHorizontal: 16,
+    paddingBottom: 30,
+    maxHeight: '78%',
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 16,
+    paddingHorizontal: 6,
+  },
+  modalTitle: {
+    color: COLORS.ink,
+    fontSize: 17,
+    fontWeight: '700',
+  },
+  modalClose: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: COLORS.input,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  modalCloseText: {
+    color: COLORS.ink,
+    fontSize: 18,
+    fontWeight: '700',
+  },
+  photoGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 10,
+  },
+  pickerPhoto: {
+    width: '31.5%',
+    aspectRatio: 1,
+    borderRadius: 8,
+    backgroundColor: '#E7FBF1',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  pickerPhotoEmoji: {
+    fontSize: 36,
+  },
+  pickerPhotoSelected: {
+    borderWidth: 3,
+    borderColor: COLORS.green,
+  },
+  pickerConfirm: {
+    marginTop: 18,
   },
 });
 

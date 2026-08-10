@@ -29,7 +29,8 @@
           "imageWidth": 240,
           "resizeMode": "contain"
         }
-      ]
+      ],
+      "@react-native-community/datetimepicker"
     ]
   }
 }

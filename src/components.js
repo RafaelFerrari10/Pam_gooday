@@ -67,6 +67,7 @@ export function Field({
   password = false,
   visible = false,
   onToggleVisibility,
+  keyboardType,
 }) {
   return (
     <View style={styles.field}>
@@ -75,6 +76,7 @@ export function Field({
         <TextInput
           autoCapitalize="none"
           autoCorrect={false}
+          keyboardType={keyboardType}
           onChangeText={onChangeText}
           placeholder={placeholder}
           placeholderTextColor={COLORS.placeholder}
@@ -126,5 +128,46 @@ export function SocialDivider() {
       <Text style={styles.dividerText}>Ou continue com</Text>
       <View style={styles.dividerLine} />
     </View>
+  );
+}
+
+export function NextArrowButton({ onPress, style }) {
+  return (
+    <Pressable
+      accessibilityLabel="Avançar"
+      accessibilityRole="button"
+      onPress={onPress}
+      style={({ pressed }) => [
+        styles.nextArrowButton,
+        style,
+        pressed && styles.nextArrowButtonPressed,
+      ]}
+    >
+      <View style={styles.nextArrow} />
+    </Pressable>
+  );
+}
+
+export function Chip({ emoji, label, selected = false, onPress }) {
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityState={{ selected }}
+      onPress={onPress}
+      style={({ pressed }) => [
+        styles.interestChip,
+        selected && styles.interestChipSelected,
+        pressed && styles.pressed,
+      ]}
+    >
+      <View style={styles.interestChipRow}>
+        {emoji ? <Text style={styles.interestChipEmoji}>{emoji}</Text> : null}
+        <Text
+          style={[styles.interestChipText, selected && styles.interestChipTextSelected]}
+        >
+          {label}
+        </Text>
+      </View>
+    </Pressable>
   );
 }
